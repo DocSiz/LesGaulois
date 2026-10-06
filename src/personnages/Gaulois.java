@@ -5,6 +5,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 public class Gaulois {
 	private String nom;
 	private int force;
+	private int effetPotion = 1;
 	
 	public Gaulois(String nom, int force) {
 		super();
@@ -37,5 +38,14 @@ public class Gaulois {
 	@Override
 	public String toString() {
 		return nom;
+	}
+	
+	
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+		romain.recevoirCoup(force/3);
+	}
+	public void boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
 	}
 }
