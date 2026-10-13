@@ -6,12 +6,14 @@ public class Druide {
 	private String nom;
 	private int force;
 	private Chaudron chaudron;
+
 	
 	public Druide(String nom, int force, Chaudron chaudron) {
 		super();
 		this.nom = nom;
 		this.force = force;
-		this.chaudron = chaudron;
+		this.chaudron = new Chaudron(0, 0);
+		
 	}
 
 	public String getNom() {
@@ -32,7 +34,7 @@ public class Druide {
 		parler("J'ai concocté " + quantite + " doses de potion et ca force est " + forcePotion);
 		
 	}
-	public void booster(Gaulois gaulois) {
+	public void boosterGaulois(Gaulois gaulois) {
 		boolean contientPotion = chaudron.resterPotion();
 		String nomGaulois = gaulois.getNom();
 		if (contientPotion) {
@@ -42,9 +44,12 @@ public class Druide {
 			else {
 				int forcePotion = chaudron.prendreLouche();
 				gaulois.boirePotion(forcePotion);
+				parler("Tiens " + nomGaulois + "un peu de potion magique. ");
+				
 			}
 		}
-		
+		else { parler("Desole " + nomGaulois + "il n'y a plus une seule goutte de potion.");
+			}		
 		
 		
 	}

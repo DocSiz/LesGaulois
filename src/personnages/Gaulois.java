@@ -1,6 +1,5 @@
 package personnages;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class Gaulois {
 	private String nom;
@@ -43,7 +42,11 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
-		romain.recevoirCoup(force/3);
+		if (effetPotion > 1) {
+			romain.recevoirCoup((force*effetPotion)/3);
+			effetPotion--;
+		}
+		else {romain.recevoirCoup(force/3);}
 	}
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;

@@ -1,5 +1,7 @@
 package test_fonctionnel;
 
+import objet.Chaudron;
+import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Romain;
 
@@ -9,14 +11,15 @@ public class TestGaulois {
 		
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Gaulois obelix = new Gaulois("Obélix", 16);
-		Romain minus = new Romain("Minus", 6);
+		Romain brutus = new Romain("Brutus", 6);
+		Druide pano = new Druide("Panoramix", 2, null );
 		
-		asterix.parler("Bonjour Obélix.");
-		obelix.parler("Bonjour Astérix. Ca te dirais d'aller chasser des sangliers ?");
-		asterix.parler("Oui très bonne idée.");
-		System.out.println("Dans la forêt " + asterix + " et " + obelix + " tombent nez à nez sur le romain " + minus);
+		
+		pano.fabriquerPotion(4, 3);
+		pano.boosterGaulois(obelix);
+		pano.boosterGaulois(asterix);
 		for (int i=0;i<3;i++) {
-			asterix.frapper(minus);
+			asterix.frapper(brutus);
 		}
 
 	}
