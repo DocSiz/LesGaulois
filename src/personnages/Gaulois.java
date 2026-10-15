@@ -1,5 +1,6 @@
 package personnages;
 
+import village_gaulois.Village;
 
 public class Gaulois {
 	private String nom;
@@ -51,4 +52,20 @@ public class Gaulois {
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
 	}
-}
+	
+	public void setVillage(Village village) {
+		
+	}
+	
+	public void sePresenter() {
+		if (true) {
+			System.out.println("Le Gaulois " + nom + ": Bonjour, je m'appelle " + nom + ". Je suis le chef du village : "  ); //+ nom_village );
+		}
+		//else if () {
+		//	System.out.println("Le Gaulois " + nom + ": Bonjour, je m'appelle " + nom + ". J'habite le village : " + nom_village );
+		//}
+		//else {
+		//	System.out.println("Le Gaulois " + nom + ": Bonjour, je m'appelle " + nom + ". Je voyage de villages en villages.");
+		}
+	}
+//}
